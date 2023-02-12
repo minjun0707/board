@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/board?serverTimezone=UTC&characterEncoding=UTF-8
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+    properties: # property 사용 설정
+      hibernate: # hibernate property 설정
+        format_sql: true
+
+# 로그 레벨 설정
+logging:
+  level:
+    # hibernate 가 남기는 모든 로그가 debug모드로 설정
+    # jpa hibernate가 생성하는 sql이 로거를 통해서 찍히도록 하는 설정
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace # 실제 들어가는 파라미터값 찍어주는 설정
